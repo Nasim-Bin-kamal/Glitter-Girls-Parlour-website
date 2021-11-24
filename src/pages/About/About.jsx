@@ -1,9 +1,10 @@
 import React from 'react';
+import NavigationBar from '../../components/Shared/NavigationBar/NavigationBar';
 
 const About = () => {
     return (
         <div>
-            <h2>About page</h2>
+            <NavigationBar />
         </div>
     );
 };

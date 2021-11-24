@@ -102,8 +102,12 @@ export default function NavigationBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <NavLink style={{ textDecoration: 'none' }} to="/login">Login</NavLink>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <NavLink style={{ textDecoration: 'none' }} to="/dashboard">Dashboard</NavLink>
+      </MenuItem>
     </Menu>
   );
 
@@ -126,10 +130,6 @@ export default function NavigationBar() {
     >
       <MenuItem>
         <IconButton size="small" aria-label="show 4 new mails" color="inherit">
-          {/* <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge> */}
-          <HomeIcon />
           <NavLink style={{ textDecoration: 'none' }} to="/">Home</NavLink>
         </IconButton>
 
@@ -140,11 +140,17 @@ export default function NavigationBar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          {/* <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge> */}
-          <InfoIcon />
           <NavLink style={{ textDecoration: 'none' }} to="/about">About</NavLink>
+        </IconButton>
+
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          size="small"
+          aria-label="show 17 new notifications"
+          color="inherit"
+        >
+          <NavLink style={{ textDecoration: 'none' }} to="/dashboard">Dashboard</NavLink>
         </IconButton>
 
       </MenuItem>
@@ -159,9 +165,9 @@ export default function NavigationBar() {
           <AccountCircle />
 
         </IconButton>
-
         <p>Profile</p>
       </MenuItem>
+
     </Menu>
   );
 
@@ -181,14 +187,6 @@ export default function NavigationBar() {
               <MenuIcon />
             </IconButton>
 
-            {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-           Glitter Girls
-          </Typography> */}
             <Box>
               <img src="https://i.ibb.co/8r7Bm5n/gliter-logo-removebg-preview.png" width="50%" alt="" />
             </Box>
@@ -196,9 +194,6 @@ export default function NavigationBar() {
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <IconButton size="small" aria-label="show 4 new mails" color="inherit">
-                {/* <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge> */}
                 <NavLink style={{ textDecoration: 'none', color: '#000' }} to="/">Home</NavLink>
               </IconButton>
               <IconButton
@@ -206,10 +201,14 @@ export default function NavigationBar() {
                 aria-label="show 17 new notifications"
                 color="inherit"
               >
-                {/* <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge> */}
                 <NavLink style={{ textDecoration: 'none', color: '#000' }} to="/about">About</NavLink>
+              </IconButton>
+              <IconButton
+                size="small"
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <NavLink style={{ textDecoration: 'none', color: '#000' }} to="/dashboard">Dashboard</NavLink>
               </IconButton>
               <IconButton
                 size="large"
@@ -224,6 +223,7 @@ export default function NavigationBar() {
                 <AccountCircle />
               </IconButton>
             </Box>
+
             <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
@@ -236,6 +236,7 @@ export default function NavigationBar() {
                 <MoreIcon />
 
               </IconButton>
+
             </Box>
 
           </Toolbar>
